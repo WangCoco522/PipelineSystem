@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wico.systemlinkweb.mapper.UserMapper">
+    <insert id="insertOne">
+        INSERT INTO public.user("username", "password", "bitmap", "update_time")
+        VALUES (#{user.username}, #{user.password}, #{user.bitmap}, #{user.updateTime})
+    </insert>
+    <update id="updateBitmap">
+        UPDATE public.user
+        SET bitmap      = #{bitmap},
+            update_time = #{updateTime}
+        WHERE id = #{id}
+    </update>
+    <update id="updatePassword">
+        UPDATE public.user
+        SET password    = #{password},
+            update_time = #{updateTime}
+        WHERE id = #{id}
+    </update>
+    <delete id="deleteById">
+        DELETE
+        FROM public.user
+        WHERE id = #{id}
+    </delete>
+    <select id="findByUser" parameterType="com.wico.systemlinkweb.domain.User"
+            resultType="com.wico.systemlinkweb.domain.User">
+        select *
+        from public.user
+        where username = #{username}
+          and password = #{password}
+    </select>
+
+    <select id="selectByName" parameterType="string" resultType="com.wico.systemlinkweb.domain.User">
+        select *
+        from public.user
+        where username = #{userName}
+    </select>
+    <select id="countAll" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM public.user
+    </select>
+    <select id="pagingAll" resultType="com.wico.systemlinkweb.domain.User">
+        SELECT *
+        FROM public.user OFFSET #{queryVo.start}
+        LIMIT #{queryVo.pageSize}
+    </select>
+    <select id="selectById" resultType="com.wico.systemlinkweb.domain.User">
+        SELECT *
+        FROM public.user
+        WHERE id = #{id}
+    </select>
+</mapper>

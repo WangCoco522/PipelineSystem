@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wico.systemlinkweb.mapper.DeviceMapper">
+    <select id="findByPage" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.Device">
+        select deviceidkey,collecttimekey,latestcode,communityname,devicetype,kind,puidkey,isencry
+        from forweb.gas_attribute
+        <include refid="findWhere"></include>
+        <if test="manufacturerId != null and manufacturerId != ''">
+            and deviceidkey like '__${manufacturerId}%'
+        </if>
+<!--        <if test="deviceRanges !=null">-->
+<!--            <foreach collection="deviceRanges" item="deviceRange"  separator="or"  index="index" open="and (" close=")" >-->
+<!--                gas_attribute.deviceidkey BETWEEN #{deviceRanges[${index}].fromDeviceId,jdbcType=VARCHAR } AND-->
+<!--                #{deviceRanges[${index}].toDeviceId,jdbcType=VARCHAR }-->
+<!--            </foreach>-->
+<!--        </if>-->
+<!--        <if test="kindControl !=null">-->
+<!--            and kind in-->
+<!--            <foreach collection="kindControl" item="kindControl"  separator=","  index="index" open=" (" close=")" >-->
+<!--                #{kindControl[${index}],jdbcType=VARCHAR }-->
+<!--            </foreach>-->
+<!--        </if>-->
+<!--        <if test="deviceRanges !=null">-->
+<!--            <foreach collection="deviceRanges" item="deviceRange"  separator="or"  index="index" open="and (" close=")" >-->
+<!--                gas_attribute.deviceidkey BETWEEN #{deviceRanges[${index}].fromDeviceId,jdbcType=VARCHAR } AND-->
+<!--                #{deviceRanges[${index}].toDeviceId,jdbcType=VARCHAR }-->
+<!--            </foreach>-->
+<!--        </if>-->
+<!--        <if test="kindControl !=null">-->
+<!--            and kind in-->
+<!--            <foreach collection="kindControl" item="kindControl"  separator=","  index="index" open=" (" close=")" >-->
+<!--                #{kindControl[${index}],jdbcType=VARCHAR }-->
+<!--            </foreach>-->
+<!--        </if>-->
+        <include refid="sort"></include>
+        limit #{pageSize} offset #{start};
+    </select>
+
+    <select id="findSpecial" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.Device">
+        select deviceidkey,collecttimekey,latestcode,communityname,devicetype,kind,puidkey
+        from forweb.gas_attribute
+        <include refid="findWhere"></include>
+        and deviceidkey like '__FF%'
+        <!--        <if test="deviceRanges !=null">-->
+        <!--            <foreach collection="deviceRanges" item="deviceRange"  separator="or"  index="index" open="and (" close=")" >-->
+        <!--                gas_attribute.deviceidkey BETWEEN #{deviceRanges[${index}].fromDeviceId,jdbcType=VARCHAR } AND-->
+        <!--                #{deviceRanges[${index}].toDeviceId,jdbcType=VARCHAR }-->
+        <!--            </foreach>-->
+        <!--        </if>-->
+        <!--        <if test="kindControl !=null">-->
+        <!--            and kind in-->
+        <!--            <foreach collection="kindControl" item="kindControl"  separator=","  index="index" open=" (" close=")" >-->
+        <!--                #{kindControl[${index}],jdbcType=VARCHAR }-->
+        <!--            </foreach>-->
+        <!--        </if>-->
+        <include refid="sort"></include>
+        limit #{pageSize} offset #{start};
+    </select>
+
+    <select id="findWarningCount" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="int">
+        select count(*)
+        from forweb.gas_warning
+        where deviceidkey = #{deviceIdKey}
+          and to_timestamp(substring(warningtimekey FROM 1 for 8), 'yyyyMMdd') BETWEEN CURRENT_DATE - #{timeInterval} and CURRENT_DATE
+    </select>
+
+    <select id="findKindByDeviceId" resultType="String">
+        select kind
+        from forweb.gas_attribute
+        where deviceidkey = #{deviceIdKey}
+    </select>
+
+    <select id="findWarningInfoByKindAndId" resultType="String">
+        select content
+        from forweb.log_def
+        where kind_code = #{kind} and
+        code = #{code} and
+        log_level = #{level}
+    </select>
+
+    <select id="findTotalCount" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="int">
+        select count(*)
+        from forweb.gas_attribute
+        <include refid="findWhere"/>
+        <if test="manufacturerId != null and manufacturerId != ''">
+            and deviceidkey like '__${manufacturerId}%'
+        </if>
+<!--        <if test="deviceRanges !=null">-->
+<!--            <foreach collection="deviceRanges" item="deviceRange"  separator="or"  index="index" open="and (" close=")" >-->
+<!--                gas_attribute.deviceidkey BETWEEN #{deviceRanges[${index}].fromDeviceId,jdbcType=VARCHAR } AND-->
+<!--                #{deviceRanges[${index}].toDeviceId,jdbcType=VARCHAR }-->
+<!--            </foreach>-->
+<!--        </if>-->
+<!--        <if test="kindControl !=null">-->
+<!--            and kind in-->
+<!--            <foreach collection="kindControl" item="kindControl"  separator=","  index="index" open=" (" close=")" >-->
+<!--                #{kindControl[${index}],jdbcType=VARCHAR }-->
+<!--            </foreach>-->
+<!--        </if>-->
+<!--        <if test="deviceRanges !=null">-->
+<!--            <foreach collection="deviceRanges" item="deviceRange"  separator="or"  index="index" open="and (" close=")" >-->
+<!--                gas_attribute.deviceidkey BETWEEN #{deviceRanges[${index}].fromDeviceId,jdbcType=VARCHAR } AND-->
+<!--                #{deviceRanges[${index}].toDeviceId,jdbcType=VARCHAR }-->
+<!--            </foreach>-->
+<!--        </if>-->
+<!--        <if test="kindControl !=null">-->
+<!--            and kind in-->
+<!--            <foreach collection="kindControl" item="kindControl"  separator=","  index="index" open=" (" close=")" >-->
+<!--                #{kindControl[${index}],jdbcType=VARCHAR }-->
+<!--            </foreach>-->
+<!--        </if>-->
+    </select>
+
+    <select id="findTotalSpecialCount" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="int">
+        select count(*)
+        from forweb.gas_attribute
+        <include refid="findWhere"/>
+        and deviceidkey like '__FF%'
+        <!--        <if test="deviceRanges !=null">-->
+        <!--            <foreach collection="deviceRanges" item="deviceRange"  separator="or"  index="index" open="and (" close=")" >-->
+        <!--                gas_attribute.deviceidkey BETWEEN #{deviceRanges[${index}].fromDeviceId,jdbcType=VARCHAR } AND-->
+        <!--                #{deviceRanges[${index}].toDeviceId,jdbcType=VARCHAR }-->
+        <!--            </foreach>-->
+        <!--        </if>-->
+        <!--        <if test="kindControl !=null">-->
+        <!--            and kind in-->
+        <!--            <foreach collection="kindControl" item="kindControl"  separator=","  index="index" open=" (" close=")" >-->
+        <!--                #{kindControl[${index}],jdbcType=VARCHAR }-->
+        <!--            </foreach>-->
+        <!--        </if>-->
+    </select>
+
+    <select id="findDeviceRangeByUser" resultType="com.wico.systemlinkweb.domain.DeviceRange">
+        SELECT
+            fromdeviceid,
+            todeviceid
+        FROM
+            forweb.user_device_range
+        WHERE
+            username = #{user}
+    </select>
+    
+    <select id="findKindRangeByRole" resultType="String">
+      SELECT kind
+      FROM forweb.role_kind_control
+      WHERE rolename = #{userRole}
+    </select>
+
+    <select id="findAttributeById" parameterType="string" resultType="com.wico.systemlinkweb.domain.DeviceAttribute">
+        select * from forweb.gas_attribute where deviceidkey = #{deviceId}
+    </select>
+    <select id="findNotUploadTotalCount" resultType="int">
+        select count(*) FROM forweb.not_upload_deviceid where date = #{date}
+    </select>
+    <select id="findNotUploadDeviceId" resultType="String">
+        SELECT deviceidkey FROM forweb.not_upload_deviceid WHERE date = #{date}
+        limit #{pageSize} offset #{start};
+    </select>
+    <update id="updateAttribute" parameterType="com.wico.systemlinkweb.domain.DeviceAttribute">
+        update forweb.gas_attribute
+        <set>
+            <if test="commNoKey!=null and commNoKey!=''">
+                commnokey = #{commNoKey},
+            </if>
+            <if test="deviceProvince!=null and deviceProvince!=''">
+                deviceprovince=#{deviceProvince},
+            </if>
+            <if test="deviceCity!=null and deviceCity!=''">
+                devicecity=#{deviceCity},
+            </if>
+            <if test="communityName!=null and communityName!=''">
+                communityname=#{communityName},
+            </if>
+            <if test="simNumber!=null and simNumber!=''">
+                simnumber=#{simNumber},
+            </if>
+            <if test="householdId!=null and householdId!=''">
+                householdid=#{householdId},
+            </if>
+            <if test="householdName!=null and householdName!=''">
+                householdname=#{householdName},
+            </if>
+            <if test="householdNumber!=null and householdNumber!=''">
+                householdnumber=#{householdNumber},
+            </if>
+            <if test="telephone!=null and telephone!=''">
+                telephone=#{telephone},
+            </if>
+            <if test="installTime!=null and installTime!=''">
+                installtime=#{installTime},
+            </if>
+            <if test="deviceType!=null and deviceType!=''">
+                devicetype=#{deviceType},
+            </if>
+            <if test="company!=null and company!=''">
+                company=#{company},
+            </if>
+            <if test="deviceProduct!=null and deviceProduct!=''">
+                deviceproduct=#{deviceProduct},
+            </if>
+        </set>
+        where deviceidkey = #{deviceIdKey}
+    </update>
+
+    <select id="findFailure" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.Device">
+        select deviceidkey,
+        collecttimekey,
+        latestcode,
+        communityname,
+        devicetype,
+        kind,
+        puidkey
+        from forweb.gas_attribute
+        where char_length(deviceidkey)=12 and devicetype in('00','01','03') and collecttimekey is not null and ABS(to_date(collecttimekey,'yyyy-MM-dd')-CURRENT_DATE)>=#{screenTime}
+        <if test="deviceNumber !=null and deviceNumber !=''">
+            and deviceidkey like '%${deviceNumber}%'
+        </if>
+        <if test="deviceType !=null and deviceType !=''">
+            and devicetype=#{deviceType}
+        </if>
+        <if test="company !=null and company !=''">
+            and company=#{company}
+        </if>
+        <if test="startTime !=null and startTime !=''">
+            and collecttimekey &gt; #{startTime}
+        </if>
+        <if test="endTime !=null and endTime !=''">
+            and collecttimekey &lt; #{endTime}
+        </if>
+        <if test="deviceProduct !=null and deviceProduct !=''">
+            and deviceproduct=#{deviceProduct}
+        </if>
+        <if test="kindCode !=null and kindCode !=''">
+            and kind=#{kindCode}
+        </if>
+        <include refid="sort"/>
+        limit #{pageSize} offset #{start};
+    </select>
+
+    <select id = "findFailureTotalCount" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="int">
+        select count(*) from forweb.gas_attribute
+        where char_length(deviceidkey)=12 and devicetype in('00','01','03') and collecttimekey is not null and ABS(to_date(collecttimekey,'yyyy-MM-dd')-CURRENT_DATE)>=#{screenTime}
+        <if test="deviceNumber !=null and deviceNumber !=''">
+            and deviceidkey like '%${deviceNumber}%'
+        </if>
+        <if test="deviceType !=null and deviceType !=''">
+            and devicetype=#{deviceType}
+        </if>
+        <if test="company !=null and company !=''">
+            and company=#{company}
+        </if>
+        <if test="startTime !=null and startTime !=''">
+            and collecttimekey &gt; #{startTime}
+        </if>
+        <if test="endTime !=null and endTime !=''">
+            and collecttimekey &lt; #{endTime}
+        </if>
+        <if test="deviceProduct !=null and deviceProduct !=''">
+            and deviceproduct=#{deviceProduct}
+        </if>
+        <if test="kindCode !=null and kindCode !=''">
+            and kind=#{kindCode}
+        </if>
+    </select>
+
+    <select id="findHistory" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.DeviceMessage">
+        select *
+        from forweb.gas_message
+        where deviceidkey = #{deviceIdKey} and writeTime is not null and length(collecttimekey) = 10
+        <include refid="sort"/>
+        limit #{pageSize} offset #{start}
+    </select>
+
+    <select id="findHistoryById" parameterType="string" resultType="com.wico.systemlinkweb.domain.DeviceMessage">
+        select *
+        from forweb.gas_message
+        where deviceidkey = #{deviceIdkey}
+    </select>
+
+    <select id="findMessageTotal" parameterType="string" resultType="int">
+        select count(*) from forweb.gas_message where deviceidkey = #{deviceIdKey}
+    </select>
+
+    <select id="findWarning" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.DeviceWarning">
+        select * from forweb.gas_warning where deviceidkey = #{deviceIdKey}
+        <include refid="sort"></include>
+        limit #{pageSize} offset #{start}
+    </select>
+
+    <select id="findWarningTotalCount" parameterType="string" resultType="int">
+        select count(*) from forweb.gas_warning where deviceidkey = #{deviceIdKey}
+    </select>
+
+    <select id="findEvent" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.DeviceEvent">
+        select * from forweb.gas_event where deviceidkey = #{deviceIdKey}
+        <include refid="sort"></include>
+        limit #{pageSize} offset #{start}
+    </select>
+
+    <select id="findEventTotalCount" parameterType="string" resultType="int">
+        select count(*) from forweb.gas_event where deviceidkey = #{deviceIdKey}
+    </select>
+
+    <select id="findResponse" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.DeviceResponse">
+        select * from forweb.gas_response where deviceidkey = #{deviceIdKey}
+        <include refid="sort"></include>
+        limit #{pageSize} offset #{start}
+    </select>
+
+    <select id="findResponseTotalCount" parameterType="string" resultType="int">
+        select count(*) from forweb.gas_response where deviceidkey = #{deviceIdKey}
+    </select>
+
+    <select id="findCommand" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.DeviceCommand">
+        select * from forweb.gas_command where deviceidkey = #{deviceIdKey}
+        <include refid="sort"></include>
+        limit #{pageSize} offset #{start}
+    </select>
+
+    <select id="findCommandTotalCount" parameterType="string" resultType="int">
+        select count(*) from forweb.gas_command where deviceidkey = #{deviceIdKey}
+    </select>
+
+    <select id="findMessageById" parameterType="string" resultType="com.wico.systemlinkweb.domain.DeviceMessage">
+        select  *
+        from forweb.gas_message
+        where collecttimekey in (select max(collecttimekey)
+				from forweb.gas_message where collecttimekey is not null and deviceidkey = #{deviceIdKey}) and deviceidkey = #{deviceIdKey}
+    </select>
+
+    <select id="findDevicePassConditionById" parameterType="int" resultType="com.wico.systemlinkweb.domain.DevicePassCondition">
+        select * from forweb.gas_pass_condition where user_id = #{userId}
+    </select>
+
+    <update id="updateDevicePassCondition" parameterType="com.wico.systemlinkweb.domain.DevicePassCondition">
+        update forweb.gas_pass_condition
+        <set>
+            <if test="userId!=null and userId != ''">
+                user_id = #{userId},
+            </if>
+            <if test="totalFlowUpperLimit!=null and totalFlowUpperLimit!= ''">
+                totalflow_upperlimit = #{totalFlowUpperLimit},
+            </if>
+            <if test="totalFlowFloorLimit!=null and totalFlowFloorLimit!=''">
+                totalflow_floorlimit = #{totalFlowFloorLimit},
+            </if>
+            <if test="rssiUpperLimit != null and rssiUpperLimit != ''">
+                rssi_upperlimit = #{rssiUpperLimit},
+            </if>
+            <if test="rssiFloorLimit != null and rssiFloorLimit !=''">
+                rssi_floorlimit = #{rssiFloorLimit},
+            </if>
+            <if test="swrlse != null and swrlse != ''">
+                swrlse = #{swrlse},
+            </if>
+        </set>
+        where user_id = #{userId}
+    </update>
+    <select id="findStatUpload" parameterType="com.wico.systemlinkweb.domain.DeviceStatUploadQuery" resultType="com.wico.systemlinkweb.domain.DeviceStatUpload">
+        SELECT
+	notuploadtotalnum,
+	uniquetotalnum,
+	repeattotalnum,
+	date
+        FROM
+	forweb.stat_repeat_upload
+        WHERE
+	kind = #{kind} AND
+	stat_repeat_upload."date" BETWEEN #{fromDate}  AND #{toDate}
+	ORDER BY date ASC
+    </select>
+
+    <insert id="insertDevicePassCondition" parameterType="com.wico.systemlinkweb.domain.DevicePassCondition">
+        insert into forweb.gas_pass_condition(user_id,
+                                              totalflow_upperlimit,
+                                              totalflow_floorlimit,
+                                              rssi_upperlimit,
+                                              rssi_floorlimit,
+                                              swrlse)
+        values(#{userId,jdbcType=BIGINT},
+              #{totalFlowUpperLimit,jdbcType=NUMERIC},
+              #{totalFlowFloorLimit,jdbcType=NUMERIC},
+              #{rssiUpperLimit,jdbcType=NUMERIC},
+              #{rssiFloorLimit,jdbcType=NUMERIC},
+              #{swrlse,jdbcType=VARCHAR})
+    </insert>
+
+    <select id="findDevicePassCondition" parameterType="int" resultType="boolean">
+        <![CDATA[ select count(*) from forweb.gas_pass_condition where user_id=#{id} ]]>
+    </select>
+
+    <select id="getStatics" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.DeviceStatics">
+        select * from forweb.stat_repeat_upload where kind = #{kindCode} and date = #{date}
+    </select>
+
+    <select id="findLocation" resultType="com.wico.systemlinkweb.domain.DeviceLocation">
+   SELECT DISTINCT
+    forweb.gas_attribute.deviceidkey,
+    forweb.gas_attribute.communityname,
+    forweb.gas_attribute.devicelocation
+    FROM
+    forweb.gas_attribute
+    WHERE
+    forweb.gas_attribute.communityname IS NOT NULL  AND
+    gas_attribute.transfered = 0
+   </select>
+
+    <select id="findLocationInOneHour" resultType="com.wico.systemlinkweb.domain.DeviceLatitude">
+        SELECT DISTINCT
+        forweb.gas_latitude.deviceidkey,
+        forweb.gas_latitude.coordinate,
+        forweb.gas_attribute.deviceType,
+        forweb.gas_warning.id,
+        forweb.log_def.content,
+        forweb.gas_attribute.communityname
+        FROM
+        forweb.gas_warning,
+        forweb.gas_attribute,
+        forweb.gas_latitude,
+        forweb.log_def
+        WHERE
+        forweb.gas_attribute.communityname IS NOT NULL AND
+        forweb.gas_warning.deviceidkey = forweb.gas_attribute.deviceidkey AND
+        forweb.gas_attribute.deviceidkey = forweb.gas_latitude.deviceidkey AND
+        EXTRACT ( EPOCH FROM current_timestamp ) - EXTRACT ( EPOCH FROM(TO_TIMESTAMP(cast(substring(ts from 1 for 10) as integer )))) &lt; 3600 AND
+        forweb.gas_attribute.kind = forweb.log_def.kind_code AND
+        forweb.gas_warning.warningidkey = forweb.log_def.code
+    </select>
+
+    <select id="findLatitude" resultType="com.wico.systemlinkweb.domain.DeviceLatitude" parameterType="com.wico.systemlinkweb.domain.DeviceLatitudeQuery">
+        SELECT
+	    baidulng,
+	    baidulat
+        FROM
+	    forweb.gas_latitude_1
+        WHERE
+        gas_latitude_1.baidulng  BETWEEN #{minLng} AND #{maxLng} AND
+        gas_latitude_1.baidulat  BETWEEN #{minLat} AND #{maxLat}
+    </select>
+
+    <select id="findMinuteDiscrete" resultType="com.wico.systemlinkweb.domain.DeviceMinuteDiscrete" parameterType="com.wico.systemlinkweb.domain.DeviceMinuteDiscreteQuery">
+        SELECT
+        myMinute,
+        COUNT ( * ) AS mycount
+        FROM
+        (
+        SELECT
+        <if test="kind!=null and kind!=''">
+            kind,
+        </if>
+        <if test="book!=null and book!=''">
+            book,
+        </if>
+        writetime,
+        date_part( 'MINUTE', writetime :: TIMESTAMP ) AS myMinute
+        FROM
+        forweb.gas_message,
+        forweb.gas_attribute
+        WHERE
+        forweb.gas_message.deviceidkey = forweb.gas_attribute.deviceidkey AND
+        <if test="kind!=null and kind!=''">
+            gas_attribute.kind = #{kind} AND
+        </if>
+        <if test="book!=null and book!=''">
+            book = #{book} AND
+        </if>
+        to_date( writetime, 'yyyy-MM-dd' ) =  (CURRENT_DATE -1)
+        AND date_part( 'HOUR', writetime :: TIMESTAMP ) = #{hour}
+        ) AS hour_table
+        GROUP BY
+        <if test="book!=null and book!=''">
+            book,
+        </if>
+        <if test="kind!=null and kind!=''">
+            kind,
+        </if>
+        myMinute
+        ORDER BY
+        myMinute ASC
+    </select>
+
+    <select id="findDiscrete" resultType="com.wico.systemlinkweb.domain.DeviceDiscrete" parameterType="com.wico.systemlinkweb.domain.DeviceDiscreteQuery">
+        SELECT
+        myhour,count(*) as mycount FROM
+        (
+        SELECT
+        <if test="kind!=null and kind!=''">
+            kind,
+        </if>
+        <if test="book!=null and book!=''">
+            book,
+        </if>
+        writetime, date_part('HOUR',  writetime :: TIMESTAMP) as myhour
+        FROM
+        forweb.gas_message,forweb.gas_attribute
+        WHERE
+        forweb.gas_message.deviceidkey = forweb.gas_attribute.deviceidkey AND
+        <if test="kind!=null and kind!=''">
+            gas_attribute.kind = #{kind} AND
+        </if>
+        <if test="book!=null and book!=''">
+            book = #{book} AND
+        </if>
+        to_date( writetime, 'yyyy-MM-dd' ) =  (CURRENT_DATE -1)
+        ) as hour_table
+        GROUP BY
+        <if test="book!=null and book!=''">
+            book,
+        </if>
+        <if test="kind!=null and kind!=''">
+            kind,
+        </if>
+        myhour
+        ORDER BY  myhour ASC
+    </select>
+    <update id="updateTransfered" parameterType="com.wico.systemlinkweb.domain.DeviceLocation">
+        UPDATE forweb.gas_attribute
+     set transfered = 1
+     WHERE deviceidkey = #{deviceIdKey}
+    </update>
+
+    <update id="updatePartAttribute" parameterType="com.wico.systemlinkweb.domain.AttributeFromExcel">
+        update forweb.gas_attribute
+        <set>
+            <if test="commNoKey!=null and commNoKey!=''">
+                commnokey=#{commNoKey},
+            </if>
+            <if test="swrlseKey!=null and swrlseKey!=''">
+                swrlsekey=#{swrlseKey},
+            </if>
+            <if test="readIntervalKey!=null and readIntervalKey!=''">
+                readintervalkey=#{readIntervalKey},
+            </if>
+            <if test="deviceProvince != null and deviceProvince != ''">
+                deviceprovince = #{deviceProvince},
+            </if>
+            <if test="deviceCity != null and deviceCity != ''">
+                devicecity = #{deviceCity},
+            </if>
+            <if test="simNumber != null and simNumber != ''">
+                simNumber = #{simNumber},
+            </if>
+            <if test="householdId != null and householdId != ''">
+                householdId = #{householdId},
+            </if>
+            <if test="householdName != null and householdName != ''">
+                householdName = #{householdName},
+            </if>
+            <if test="telephone != null and telephone != ''">
+                telephone = #{telephone},
+            </if>
+            <if test="installTime != null and installTime != ''">
+                installtime = #{installTime},
+            </if>
+            <if test="deviceType != null and deviceType != ''">
+                devicetype = #{deviceType},
+            </if>
+            <if test="company != null and company != ''">
+                company = #{company},
+            </if>
+            <if test="householdNumber != null and householdNumber != ''">
+                householdnumber = #{householdNumber},
+            </if>
+            <if test="collectTimeKey != null and collectTimeKey != ''">
+                collecttimekey = #{collectTimeKey},
+            </if>
+            <if test="deviceProduct != null and deviceProduct != ''">
+                deviceproduct = #{deviceProduct},
+            </if>
+            <if test="latestCode != null and latestCode != ''">
+                latestcode = #{latestCode},
+            </if>
+            <if test="communityName != null and communityName != ''">
+                communityname = #{communityName},
+            </if>
+            <if test="forNumber != null and forNumber != ''">
+                fornumber = #{forNumber},
+            </if>
+            <if test="kind != null and kind != ''">
+                kind = #{kind},
+            </if>
+            <if test="puIdKey != null and puIdKey != ''">
+                puidkey = #{puIdKey},
+            </if>
+            <if test="book != null and book != ''">
+                book = #{book},
+            </if>
+            <if test="cimi != null and cimi != ''">
+                cimi = #{cimi},
+            </if>
+            <if test="deviceLocation != null and deviceLocation != ''">
+                devicelocation = #{deviceLocation},
+            </if>
+            <if test="module != null and module != ''">
+                module = #{module},
+            </if>
+            <if test="deviceType1 != null and deviceType1 != ''">
+                devicetype1 = #{deviceType1},
+            </if>
+         </set>
+        where deviceidkey = #{deviceIdKey}
+    </update>
+
+    <select id="findBook" resultType="com.wico.systemlinkweb.domain.DeviceBook">
+        SELECT DISTINCT book FROM forweb.gas_attribute
+    </select>
+
+    <select id="findError" parameterType="com.wico.systemlinkweb.vo.QueryVo" resultType="com.wico.systemlinkweb.domain.GasError">
+        select id_auto,gas_ts,result_message,result_code,result_data,sign,gas_in
+        from forweb.gas_error
+        <include refid="sort"></include>
+        limit #{pageSize} offset #{start}
+    </select>
+
+    <select id="findErrorTotalCount" resultType="java.lang.Integer">
+        select count(*)
+        from forweb.gas_error
+    </select>
+
+    <select id="findSensorAttribute" resultType="com.wico.systemlinkweb.domain.SensorAttribute">
+        select *
+        from public.sensor_attribute
+        where collecttimekey is not null
+        <if test="deviceNumber !=null and deviceNumber !=''">
+            and deviceidkey like '%${deviceNumber}%'
+        </if>
+        <include refid="sort"></include>
+        limit #{pageSize} offset #{start}
+    </select>
+
+    <select id="findSensorAttributeTotalCount" resultType="java.lang.Integer">
+        select count(*)
+        from public.sensor_attribute
+        where collecttimekey is not null
+        <if test="deviceNumber !=null and deviceNumber !=''">
+            and deviceidkey like '%${deviceNumber}%'
+        </if>
+    </select>
+
+    <select id="findSensorMessage" resultType="com.wico.systemlinkweb.domain.SensorMessage" parameterType="com.wico.systemlinkweb.vo.QueryVo">
+        select *
+        from public.sensor_message
+        where deviceidkey = #{deviceIdKey}
+        ORDER BY ts_partation DESC
+        limit #{pageSize} offset #{start}
+<!--        <include refid="sort"></include>-->
+<!--        limit #{pageSize} offset #{start}-->
+    </select>
+
+    <select id="findSensorMessageTotalCount" resultType="java.lang.Integer">
+        select count(*)
+        from public.sensor_message
+        where deviceidkey = #{deviceIdKey}
+    </select>
+    <select id="findSensor">
+        select * from sensor_message
+    </select>
+
+    <select id="getCountByRegTime" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM sensor_message WHERE regTime = #{regTime}
+    </select>
+    <select id="selectAll" resultType="com.wico.systemlinkweb.domain.SensorMessage">
+        select  * from public.sensor_message
+    </select>
+
+    <insert id="insertLatitude" parameterType="com.wico.systemlinkweb.domain.DeviceLatitude">
+        insert into forweb.gas_latitude_1(deviceidkey,baiDuLng,baiDuLat,gaoDeLng,gaoDeLat)
+        values(#{deviceIdKey,jdbcType=VARCHAR},#{baiDuLng,jdbcType=VARCHAR},#{baiDuLat,jdbcType=VARCHAR},#{gaoDeLng,jdbcType=VARCHAR},#{gaoDeLat,jdbcType=VARCHAR})
+    </insert>
+    
+    <insert id="insertPartAttribute" parameterType="com.wico.systemlinkweb.domain.AttributeFromExcel">
+        insert into forweb.gas_attribute
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="deviceIdKey!=null and deviceIdKey!=''">
+                deviceidkey,
+            </if>
+            <if test="commNoKey!=null and commNoKey!=''">
+                commnokey,
+            </if>
+            <if test="swrlseKey!=null and swrlseKey!=''">
+                swrlsekey,
+            </if>
+            <if test="readIntervalKey!=null and readIntervalKey!=''">
+                readintervalkey,
+            </if>
+            <if test="deviceProvince != null and deviceProvince != ''">
+                deviceprovince,
+            </if>
+            <if test="deviceCity != null and deviceCity != ''">
+                devicecity,
+            </if>
+            <if test="simNumber != null and simNumber != ''">
+                simnumber,
+            </if>
+            <if test="householdId != null and householdId != ''">
+                householdid,
+            </if>
+            <if test="householdName != null and householdName != ''">
+                householdname,
+            </if>
+            <if test="telephone != null and telephone != ''">
+                telephone,
+            </if>
+            <if test="installTime != null and installTime != ''">
+                installtime,
+            </if>
+            <if test="deviceType != null and deviceType != ''">
+                devicetype,
+            </if>
+            <if test="company != null and company != ''">
+                company,
+            </if>
+            <if test="householdNumber != null and householdNumber != ''">
+                householdnumber,
+            </if>
+            <if test="collectTimeKey != null and collectTimeKey != ''">
+                collecttimekey,
+            </if>
+            <if test="deviceProduct != null and deviceProduct != ''">
+                deviceproduct,
+            </if>
+            <if test="latestCode != null and latestCode != ''">
+                latestcode,
+            </if>
+            <if test="communityName != null and communityName != ''">
+                communityname,
+            </if>
+            <if test="forNumber != null and forNumber != ''">
+                fornumber,
+            </if>
+            <if test="kind != null and kind != ''">
+                kind,
+            </if>
+            <if test="puIdKey != null and puIdKey != ''">
+                puidkey,
+            </if>
+            <if test="book != null and book != ''">
+                book,
+            </if>
+            <if test="cimi != null and cimi != ''">
+                cimi,
+            </if>
+            <if test="deviceLocation != null and deviceLocation != ''">
+                devicelocation,
+            </if>
+            <if test="module != null and module != ''">
+                module,
+            </if>
+            <if test="deviceType1 != null and deviceType1 != ''">
+                devicetype1,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="deviceIdKey!=null and deviceIdKey!=''">
+                #{deviceIdKey,jdbcType=VARCHAR},
+            </if>
+            <if test="commNoKey!=null and commNoKey!=''">
+               #{commNoKey,jdbcType=VARCHAR},
+            </if>
+            <if test="swrlseKey!=null and swrlseKey!=''">
+                #{swrlseKey,jdbcType=VARCHAR},
+            </if>
+            <if test="readIntervalKey!=null and readIntervalKey!=''">
+               #{readIntervalKey,jdbcType=VARCHAR},
+            </if>
+            <if test="deviceProvince != null and deviceProvince != ''">
+                #{deviceProvince,jdbcType=VARCHAR},
+            </if>
+            <if test="deviceCity != null and deviceCity != ''">
+                #{deviceCity,jdbcType=VARCHAR},
+            </if>
+            <if test="simNumber != null and simNumber != ''">
+                #{simNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="householdId != null and householdId != ''">
+               #{householdId,jdbcType=VARCHAR},
+            </if>
+            <if test="householdName != null and householdName != ''">
+                #{householdName,jdbcType=VARCHAR},
+            </if>
+            <if test="telephone != null and telephone != ''">
+                #{telephone,jdbcType=VARCHAR},
+            </if>
+            <if test="installTime != null and installTime != ''">
+                #{installTime,jdbcType=VARCHAR},
+            </if>
+            <if test="deviceType != null and deviceType != ''">
+                #{deviceType,jdbcType=VARCHAR},
+            </if>
+            <if test="company != null and company != ''">
+                #{company,jdbcType=VARCHAR},
+            </if>
+            <if test="householdNumber != null and householdNumber != ''">
+                #{householdNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="collectTimeKey != null and collectTimeKey != ''">
+                #{collectTimeKey,jdbcType=VARCHAR},
+            </if>
+            <if test="deviceProduct != null and deviceProduct != ''">
+                #{deviceProduct,jdbcType=VARCHAR},
+            </if>
+            <if test="latestCode != null and latestCode != ''">
+                #{latestCode,jdbcType=VARCHAR},
+            </if>
+            <if test="communityName != null and communityName != ''">
+                #{communityName,jdbcType=VARCHAR},
+            </if>
+            <if test="forNumber != null and forNumber != ''">
+                #{forNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="kind != null and kind != ''">
+                #{kind,jdbcType=VARCHAR},
+            </if>
+            <if test="puIdKey != null and puIdKey != ''">
+                #{puIdKey,jdbcType=VARCHAR},
+            </if>
+            <if test="book != null and book != ''">
+                #{book,jdbcType=VARCHAR},
+            </if>
+            <if test="cimi != null and cimi != ''">
+               #{cimi,jdbcType=VARCHAR},
+            </if>
+            <if test="deviceLocation != null and deviceLocation != ''">
+                #{deviceLocation,jdbcType=VARCHAR},
+            </if>
+            <if test="module != null and module != ''">
+                #{module,jdbcType=VARCHAR},
+            </if>
+            <if test="deviceType1 != null and deviceType1 != ''">
+                #{deviceType1,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <sql id="findWhere">
+        where char_length(deviceidkey)=12 and devicetype in('00','01','03','40','43') and collecttimekey is not null
+        <if test="deviceNumber !=null and deviceNumber !=''">
+            and deviceidkey like '%${deviceNumber}%'
+        </if>
+        <if test="deviceType !=null and deviceType !=''">
+            and devicetype=#{deviceType}
+        </if>
+        <if test="company !=null and company !=''">
+            and company=#{company}
+        </if>
+        <if test="startTime !=null and startTime !=''">
+            and collecttimekey &gt; #{startTime}
+        </if>
+        <if test="endTime !=null and endTime !=''">
+            and collecttimekey &lt; #{endTime}
+        </if>
+        <if test="deviceProduct !=null and deviceProduct !=''">
+            and deviceproduct=#{deviceProduct}
+        </if>
+        <if test="kindCode !=null and kindCode !=''">
+            and kind=#{kindCode}                <!-- 数据库中为kind字段，这里为了不对数据库进行修改，继续使用kind字段 -->
+        </if>
+    </sql>
+
+    <sql id="sort">
+        <if test="orderField!=null and orderField!=''">
+            order by ${orderField} ${orderType}
+        </if>
+    </sql>
+</mapper>

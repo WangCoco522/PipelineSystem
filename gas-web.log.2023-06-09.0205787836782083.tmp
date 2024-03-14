@@ -1,0 +1,56 @@
+2023-06-13 14:14:13.218  INFO 47476 --- [main] c.w.s.SystemlinkwebApplication           : Starting SystemlinkwebApplication on MacBook-Pro.local with PID 47476 (/Users/xzy/Desktop/rx git/gasnew/target/classes started by xzy in /Users/xzy/Desktop/rx git/gasnew)
+2023-06-13 14:14:13.222  INFO 47476 --- [main] c.w.s.SystemlinkwebApplication           : No active profile set, falling back to default profiles: default
+2023-06-13 14:14:13.642  INFO 47476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-13 14:14:13.643  INFO 47476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-13 14:14:13.657  INFO 47476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 Redis repository interfaces.
+2023-06-13 14:14:13.986  INFO 47476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6506 (http)
+2023-06-13 14:14:13.991  INFO 47476 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-13 14:14:13.991  INFO 47476 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-06-13 14:14:14.038  INFO 47476 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-13 14:14:14.038  INFO 47476 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 789 ms
+2023-06-13 14:14:14.495  INFO 47476 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-13 14:14:14.544  INFO 47476 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-13 14:14:14.588  WARN 47476 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-06-13 14:14:14.659  INFO 47476 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-13 14:14:14.665  INFO 47476 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-13 14:14:14.673  INFO 47476 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-13 14:14:14.759  INFO 47476 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-06-13 14:14:14.780  INFO 47476 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-13 14:14:14.787  INFO 47476 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-13 14:14:14.789 ERROR 47476 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 6506 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 6506 or configure this application to listen on another port.
+
+2023-06-13 14:14:14.791  INFO 47476 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-13 14:14:14.793  INFO 47476 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2023-06-13 14:14:42.005  INFO 47489 --- [main] c.w.s.SystemlinkwebApplication           : Starting SystemlinkwebApplication on MacBook-Pro.local with PID 47489 (/Users/xzy/Desktop/rx git/gasnew/target/classes started by xzy in /Users/xzy/Desktop/rx git/gasnew)
+2023-06-13 14:14:42.006  INFO 47489 --- [main] c.w.s.SystemlinkwebApplication           : No active profile set, falling back to default profiles: default
+2023-06-13 14:14:42.331  INFO 47489 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-13 14:14:42.332  INFO 47489 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-13 14:14:42.342  INFO 47489 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2023-06-13 14:14:42.594  INFO 47489 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6508 (http)
+2023-06-13 14:14:42.597  INFO 47489 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-13 14:14:42.597  INFO 47489 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-06-13 14:14:42.628  INFO 47489 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-13 14:14:42.628  INFO 47489 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 601 ms
+2023-06-13 14:14:43.051  INFO 47489 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-13 14:14:43.103  INFO 47489 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-13 14:14:43.148  WARN 47489 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-06-13 14:14:43.224  INFO 47489 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-13 14:14:43.230  INFO 47489 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-13 14:14:43.238  INFO 47489 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-13 14:14:43.311  INFO 47489 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-06-13 14:14:43.331  INFO 47489 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6508 (http) with context path ''
+2023-06-13 14:14:43.333  INFO 47489 --- [main] c.w.s.SystemlinkwebApplication           : Started SystemlinkwebApplication in 1.522 seconds (JVM running for 1.812)

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wico.systemlinkweb.mapper.KindMapper">
+    <resultMap id = "KindResultMap" type = "com.wico.systemlinkweb.domain.KindDef">
+        <result column="kind_code" property="kindCode" jdbcType="VARCHAR"></result>
+        <result column="kind_content" property="kindContent" jdbcType="VARCHAR"></result>
+    </resultMap>
+    <select id= "findKind" resultMap="KindResultMap">
+        select * from forweb.kind_def
+    </select>
+</mapper>

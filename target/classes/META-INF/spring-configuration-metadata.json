@@ -1,0 +1,89 @@
+{
+  "groups": [
+    {
+      "name": "gasadmin",
+      "type": "com.wico.systemlinkweb.property.GasAdminProperties",
+      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties"
+    },
+    {
+      "name": "gasadmin.jwt",
+      "type": "com.wico.systemlinkweb.property.GasAdminProperties$Jwt",
+      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties",
+      "sourceMethod": "getJwt()"
+    },
+    {
+      "name": "redis",
+      "type": "com.wico.systemlinkweb.redis.RedisConfig",
+      "sourceType": "com.wico.systemlinkweb.redis.RedisConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "gasadmin.admin-default-password",
+      "type": "java.lang.String",
+      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties"
+    },
+    {
+      "name": "gasadmin.jwt.expire-time",
+      "type": "java.lang.Long",
+      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties$Jwt",
+      "defaultValue": 0
+    },
+    {
+      "name": "gasadmin.jwt.header",
+      "type": "java.lang.String",
+      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties$Jwt"
+    },
+    {
+      "name": "gasadmin.jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties$Jwt"
+    },
+    {
+      "name": "gasadmin.username-header",
+      "type": "java.lang.String",
+      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties"
+    },
+    {
+      "name": "redis.host",
+      "type": "java.lang.String",
+      "sourceType": "com.wico.systemlinkweb.redis.RedisConfig"
+    },
+    {
+      "name": "redis.password",
+      "type": "java.lang.String",
+      "sourceType": "com.wico.systemlinkweb.redis.RedisConfig"
+    },
+    {
+      "name": "redis.pool-max-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.wico.systemlinkweb.redis.RedisConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "redis.pool-max-total",
+      "type": "java.lang.Integer",
+      "sourceType": "com.wico.systemlinkweb.redis.RedisConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "redis.pool-max-wait",
+      "type": "java.lang.Integer",
+      "sourceType": "com.wico.systemlinkweb.redis.RedisConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "redis.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.wico.systemlinkweb.redis.RedisConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "redis.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.wico.systemlinkweb.redis.RedisConfig",
+      "defaultValue": 0
+    }
+  ],
+  "hints": []
+}

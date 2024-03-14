@@ -1,0 +1,7 @@
+gasadmin:
+  admin-default-password: "123456"
+  username-header: "Username"
+  jwt:
+    header: "Authorization"
+    secret: "VGhpcyBpcyBub3QgYmVjYXVzZSB3ZSB3YW50IHRvIG1ha2UgeW91ciBsaWZlIGRp"
+    expireTime: 604800  # 7天,单位秒

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wico.systemlinkweb.mapper.CommandMapper">
+
+    <insert id="insertGasCommand" parameterType="com.wico.systemlinkweb.domain.GasCommand">
+        insert into forweb.gas_command(
+            deviceidkey,
+            ts,
+            commandcode,
+            command,
+            ts_partation,
+            status)
+        values(
+               #{deviceId},
+               #{ts},
+               #{commandCode},
+               #{command},
+               #{ts_partation},
+               #{status}
+              )
+    </insert>
+
+    <insert id="insertEndPacket" parameterType="com.wico.systemlinkweb.domain.GasCommand">
+        insert into forweb.gas_end_packet(
+            deviceidkey,
+            ts,
+            commandcode,
+            command,
+            ts_partation,
+            status)
+        values(
+                  #{deviceId},
+                  #{ts},
+                  #{commandCode},
+                  #{command},
+                  #{ts_partation},
+                  #{status}
+              )
+    </insert>
+
+    <update id="updateGasCommand" parameterType="com.wico.systemlinkweb.domain.GasCommand">
+        update forweb.gas_command
+        <set>
+            <if test="status!=null and status!=''">
+                status = #{status},
+            </if>
+        </set>
+        where deviceidkey = #{deviceId}
+    </update>
+
+    <update id="updateEndPacket" parameterType="com.wico.systemlinkweb.domain.GasCommand">
+        update forweb.gas_end_packet
+        <set>
+            <if test="status!=null and status!=''">
+                status = #{status}
+            </if>
+        </set>
+        where deviceidkey = #{deviceId}
+    </update>
+
+    <select id="getCommandAttribute" parameterType="string" resultType="com.wico.systemlinkweb.domain.command.Command">
+        select str_v::json->>'随机数N1' as randNumKey,
+        str_v::json->>'PuidKey' as puidKey
+        from public.attribute_kv where attribute_key=#{deviceIdKey} and entity_id='1e98126fbd4d300a2f11feb32d3072b'
+    </select>
+
+    <select id="selectGasCommand" resultType="com.wico.systemlinkweb.domain.GasCommand">
+        select deviceidkey as deviceId,ts,commandcode,command,id,ts_partation,status from forweb.gas_command
+        where deviceidkey = #{s}
+    </select>
+
+    <select id="selectGasEndPacket" resultType="com.wico.systemlinkweb.domain.GasCommand">
+        select deviceidkey as deviceId,ts,commandcode,command,id,ts_partation,status  from forweb.gas_end_packet
+        where deviceidkey = #{s}
+    </select>
+
+    <select id="getAttribute" resultType="com.wico.systemlinkweb.domain.command.Command">
+        select randnum as randNumKey,isencry,puidkey
+        from forweb.gas_attribute
+        where deviceidkey = #{deviceIdKey}
+    </select>
+
+</mapper>
