@@ -24,22 +24,6 @@
       "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties"
     },
     {
-      "name": "gasadmin.jwt.expire-time",
-      "type": "java.lang.Long",
-      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties$Jwt",
-      "defaultValue": 0
-    },
-    {
-      "name": "gasadmin.jwt.header",
-      "type": "java.lang.String",
-      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties$Jwt"
-    },
-    {
-      "name": "gasadmin.jwt.secret",
-      "type": "java.lang.String",
-      "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties$Jwt"
-    },
-    {
       "name": "gasadmin.username-header",
       "type": "java.lang.String",
       "sourceType": "com.wico.systemlinkweb.property.GasAdminProperties"

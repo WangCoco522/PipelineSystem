@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.*;
 
@@ -45,12 +46,19 @@ public class UserController {
     @CrossOrigin
     @PostMapping("/login")
     @ApiOperation("登录")
-    public Result login(@Valid LoginVO loginVO, HttpServletResponse response, BindingResult bindingResult) {
+    public Result login(@Valid LoginVO loginVO, HttpServletResponse response, BindingResult bindingResult,HttpServletRequest request) {
 
 
         if (bindingResult.hasErrors()) {
             return Result.fail(ResultType.USER_LOGIN_INFO_EMPTY);
         }
+
+        // 从会话中获取之前存储的验证码
+        String sessionCaptcha = (String) request.getSession().getAttribute("verifyCode");
+        if (sessionCaptcha == null || !sessionCaptcha.equalsIgnoreCase(loginVO.getCaptcha())) {
+            return Result.fail(ResultType.USER_CAPTCHA_ERROR);
+        }
+
         // 校验密码长度和组成要求
         String password = loginVO.getPassword();
         if (password.length() < 8 || password.length() > 30 || !isPasswordValid(password)) {
@@ -202,6 +210,4 @@ public class UserController {
         userService.delete(id);
         return Result.success();
     }
-
-
 }

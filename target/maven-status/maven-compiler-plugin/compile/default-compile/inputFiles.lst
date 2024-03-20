@@ -1,138 +1,138 @@
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command08.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/security/handle/CustomizeLogoutSuccessHandler.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand21.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/mapper/ZwIpFilterMapper.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/RedisConfig.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand19.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/security/handle/CustomizeAuthenticationSuccessHandler.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/exception/GlobleExceptionHandler.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/UserService.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/DeviceHistoryKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/HexToBinaryStr.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/result/CodeMsg.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/security/handle/CustomizeAbstractSecurityInterceptor.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/SensorMessage.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand18.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/BasePrefix.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/ExcelUtils.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/annotation/Limiter.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/IPermissionService.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/HttpClientUtils.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand20.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/config/WebMvcConfig.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/KeyPrefix.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/mapper/KindMapper.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/SystemlinkwebApplication.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/LogDef.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/DeviceWarningKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command12.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/MapBuilder.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/pojo/Result.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceMinuteDiscreteQuery.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/SecureUtil.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/RedisPoolFactory.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceRange.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command09.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/interceptor/UserInterceptor.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/result/Result.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand02.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/exception/FrequentRequestsException.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/RedisService.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/impl/PermissionServiceImpl.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/impl/ManufacturerServiceImpl.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/Device.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/User.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/exception/GlobleException.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceStatUploadQuery.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceCommand.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/vo/ModifyPasswordVO.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/PageBean.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceEvent.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand08.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/controller/DeviceController.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command19.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/DeviceEventKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/mapper/UserMapper.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand01.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DevicePassCondition.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/NotUploadDeviceIdQuery.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/UUIDUtils.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/vo/CommandVO.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand14.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/vo/UserVO.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/aspect/LimitingAspect.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/schedule/LocationTransferSchedule.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/impl/UserServiceImpl.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/AttributeFromExcel.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/ManufacturerService.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/DeviceKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/IKindService.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/config/Swagger2Conf.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceLatitudeQuery.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/DateUtils.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command10.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/GasPermission.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/security/handle/CustomizeAuthenticationEntryPoint.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command02.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command16.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/ResponseKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceStatUpload.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/Manufacturer.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/vo/LoginVO.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/controller/UserController.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceAttribute.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/config/WebSecurityConfig.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/ThingsBoardJWTTokenTelemetryValue.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command15.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/GasError.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command20.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/mapper/CommandMapper.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/property/GasAdminProperties.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/KindDef.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/component/JwtComponent.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command01.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/UserKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/security/handle/CustomizeAuthenticationFailureHandler.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceLatitude.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceWarning.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/config/GlobalCorsConfig.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/constant/UserConst.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command14.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/IDeviceService.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/TimeCovert.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/mapper/ManufacturerMapper.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/security/handle/CustomizeFilterInvocationSecurityMetadataSource.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/types/ResultType.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/DeviceFailureKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/DeviceAttributeKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand10.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/GasCommand.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/vo/QueryVo.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/mapper/DeviceMapper.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceMessage.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceStatics.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceBook.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceLocation.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/interceptor/JwtInterceptor.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceResponse.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/mapper/PermissionMapper.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/security/UserDetailServiceImpl.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/ZwIpFilter.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command18.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/vo/RegisterVO.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceMinuteDiscrete.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceDiscreteQuery.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/CommandKey.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/redis/BeanLoad.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/WebUtil.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/ICommandService.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/impl/KindServiceImpl.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/impl/DeviceServiceImpl.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/Command21.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/command/RequestCommand09.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/utils/IPUtils.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/SensorAttribute.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/security/handle/CustomizeAccessDecisionManager.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/service/impl/CommandServiceImpl.java
-/Users/xzy/Desktop/rx git/gasnew/src/main/java/com/wico/systemlinkweb/domain/DeviceDiscrete.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command18.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceMessage.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\RedisService.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\GasPermission.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command20.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceCommand.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\ICommandService.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\HexToBinaryStr.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\WebUtil.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceDiscrete.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\IDeviceService.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceStatics.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\vo\CommandVO.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\schedule\LocationTransferSchedule.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceWarning.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\impl\DeviceServiceImpl.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceRange.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\mapper\CommandMapper.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\NotUploadDeviceIdQuery.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\mapper\ManufacturerMapper.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\KindDef.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\DeviceAttributeKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\BeanLoad.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\exception\GlobleExceptionHandler.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\SensorAttribute.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\DeviceKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\vo\RegisterVO.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceLatitude.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\mapper\ZwIpFilterMapper.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand08.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\IPermissionService.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\User.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\mapper\UserMapper.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\impl\CommandServiceImpl.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceEvent.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceMinuteDiscrete.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand10.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\CommandKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\vo\QueryVo.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\security\handle\CustomizeAuthenticationFailureHandler.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\types\ResultType.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\ManufacturerService.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\PageBean.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\exception\FrequentRequestsException.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command01.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\Device.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\DeviceWarningKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\impl\UserServiceImpl.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\config\WebSecurityConfig.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\UserService.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\constant\UserConst.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\DeviceEventKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\TimeCovert.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\vo\UserVO.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\component\JwtComponent.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\KeyPrefix.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\mapper\DeviceMapper.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceAttribute.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\ResponseKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\ExcelUtils.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\DeviceHistoryKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\GasCommand.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\result\Result.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand09.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\security\handle\CustomizeAuthenticationEntryPoint.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\security\handle\CustomizeAbstractSecurityInterceptor.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceDiscreteQuery.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command10.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command16.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\UserKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\config\GlobalCorsConfig.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceBook.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\Manufacturer.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\ThingsBoardJWTTokenTelemetryValue.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\result\CodeMsg.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceResponse.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DevicePassCondition.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\GasError.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\LogDef.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\property\GasAdminProperties.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command19.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceLocation.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\MapBuilder.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand21.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\config\Swagger2Conf.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command12.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\DateUtils.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand19.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\interceptor\JwtInterceptor.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\HttpClientUtils.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\RedisConfig.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\mapper\PermissionMapper.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command09.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand20.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\security\UserDetailServiceImpl.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceStatUpload.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand18.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\SystemlinkwebApplication.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\DeviceFailureKey.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\vo\LoginVO.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\ZwIpFilter.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\impl\KindServiceImpl.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand02.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\controller\DeviceController.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\AttributeFromExcel.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand01.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\security\handle\CustomizeFilterInvocationSecurityMetadataSource.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\SensorMessage.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command15.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\security\handle\CustomizeLogoutSuccessHandler.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\RedisPoolFactory.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command14.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\vo\ModifyPasswordVO.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\interceptor\UserInterceptor.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\IPUtils.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceStatUploadQuery.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\UUIDUtils.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\utils\SecureUtil.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\exception\GlobleException.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\mapper\KindMapper.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\annotation\Limiter.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command02.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceLatitudeQuery.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\aspect\LimitingAspect.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\pojo\Result.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\impl\PermissionServiceImpl.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\RequestCommand14.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\security\handle\CustomizeAuthenticationSuccessHandler.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command21.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\redis\BasePrefix.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\controller\UserController.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\security\handle\CustomizeAccessDecisionManager.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\command\Command08.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\domain\DeviceMinuteDiscreteQuery.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\IKindService.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\service\impl\ManufacturerServiceImpl.java
+C:\Users\Lenovo\Desktop\Graduate\gasnew\src\main\java\com\wico\systemlinkweb\config\WebMvcConfig.java
